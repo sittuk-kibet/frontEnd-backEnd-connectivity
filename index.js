@@ -1,6 +1,7 @@
 // import packages
 const express = require('express');
 const MYSQLStore = require('connect-mysql2')(session);
+const path = require('path')
 require('dotenv').config()
 
 const db = require('./config/db')
@@ -22,6 +23,10 @@ app.use(
 );
 
 //routes
+app.get('/auth', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'))
+})
+
 app.use('./auth', authRoutes)
 // start server
 const port =proccess.env.port;
