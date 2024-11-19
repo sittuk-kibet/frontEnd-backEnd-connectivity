@@ -31,3 +31,8 @@ exports.registerUser = async (req, res) => {
     }
 
 }
+
+
+exports.loginUser;
+
+exports.logoutUser;
